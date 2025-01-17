@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Record</title>
+    <link rel="stylesheet" href="/assets/todoapp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Task</h1>
+      <form action="/update/<%= index %>" method="post">
+        <label for="record">Record:</label>
+        <input
+          type="text"
+          name="record"
+          id="record"
+          value="<%= record %>"
+          required
+        />
+        <% if (message) { %>
+        <div class="update-message"><%= message %></div>
+        <% } %>
+        <button type="submit">Update</button>
+      </form>
+      <a href="/" class="cancel">Cancel</a>
+    </div>
+  </body>
+</html>
